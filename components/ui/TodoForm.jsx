@@ -1,6 +1,7 @@
 "use client";
 
 import { createTodo, getCategories } from "@/service/service";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const TodoForm = () => {
@@ -9,6 +10,8 @@ const TodoForm = () => {
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("1");
   const [priority, setPriority] = useState("high");
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +36,15 @@ const TodoForm = () => {
       priority,
     };
 
-    createTodo(body);
+    try {
+      const data = await createTodo(body);
+
+      if (data) {
+        router.push("/todos");
+      }
+    } catch (error) {
+      throw error;
+    }
   };
 
   return (

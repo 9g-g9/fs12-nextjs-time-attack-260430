@@ -29,8 +29,13 @@ export const createTodo = async (todo) => {
       category: todo.category,
       priority: todo.priority,
       createdAt: new Date(),
+      completed: false,
     }),
   });
+
+  const data = res.json();
+
+  return data;
 };
 
 export const getCategories = async () => {
