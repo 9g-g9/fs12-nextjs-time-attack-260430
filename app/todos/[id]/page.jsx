@@ -1,5 +1,14 @@
 import { getDetailTodo } from "@/service/service.js";
 
+export const generateMetadata = async ({ params, serchParams }, parent) => {
+  const { id } = await params;
+  const todo = await getDetailTodo(id);
+
+  return {
+    title: `${todo.title} - 할일 기록`,
+  };
+};
+
 const DetailTodo = async ({ params }) => {
   const { id } = await params;
   const todo = await getDetailTodo(id);

@@ -13,3 +13,29 @@ export const getDetailTodo = async (id) => {
 
   return data;
 };
+
+export const createTodo = async (todo) => {
+  const id = Date.now();
+
+  const res = await fetch(`${BASE_API_URL}/todos`, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      id,
+      title: todo.title,
+      content: todo.content,
+      category: todo.category,
+      priority: todo.priority,
+      createdAt: new Date(),
+    }),
+  });
+};
+
+export const getCategories = async () => {
+  const res = await fetch(`${BASE_API_URL}/categories`);
+  const data = await res.json();
+
+  return data;
+};

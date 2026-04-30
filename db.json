@@ -107,12 +107,37 @@
       "completed": false,
       "priority": "high",
       "createdAt": "2026-04-27T23:00:00.000Z"
+    },
+    {
+      "id": 1777531306794,
+      "title": "test",
+      "content": "test",
+      "category": "2",
+      "completed": false,
+      "priority": "medium",
+      "createdAt": "2026-04-30T06:41:46.794Z"
     }
   ],
   "categories": [
-    { "id": "1", "name": "업무", "color": "blue" },
-    { "id": "2", "name": "공부", "color": "green" },
-    { "id": "3", "name": "개인", "color": "purple" },
-    { "id": "4", "name": "운동", "color": "red" }
+    {
+      "id": "1",
+      "name": "업무",
+      "color": "blue"
+    },
+    {
+      "id": "2",
+      "name": "공부",
+      "color": "green"
+    },
+    {
+      "id": "3",
+      "name": "개인",
+      "color": "purple"
+    },
+    {
+      "id": "4",
+      "name": "운동",
+      "color": "red"
+    }
   ]
 }
